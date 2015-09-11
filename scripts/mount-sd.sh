@@ -45,8 +45,11 @@ if [ "$ACTION" = "add" ]; then
     chown $DEF_UID:$DEF_GID $MNT $MNT/${UUID}
 
     case "${TYPE}" in
-        vfat|exfat)
+        vfat)
             MOUNT_OPTS+=",uid=$DEF_UID,gid=$DEF_GID,utf8,flush,discard"
+            ;;
+        exfat)
+            MOUNT_OPTS+=",uid=$DEF_UID,gid=$DEF_GID,utf8,flush,discard -t exfat"
             ;;
         # NTFS support has not been tested but it's being left to please the ego of an engineer!
         ntfs)
