@@ -49,7 +49,7 @@ if [ "$ACTION" = "add" ]; then
             MOUNT_OPTS+=",uid=$DEF_UID,gid=$DEF_GID,utf8,flush,discard"
             ;;
         exfat)
-            MOUNT_OPTS+=",uid=$DEF_UID,gid=$DEF_GID,utf8,flush,discard -t exfat"
+            MOUNT_OPTS+=",uid=$DEF_UID,gid=$DEF_GID,utf8,discard -t exfat"
             ;;
         # NTFS support has not been tested but it's being left to please the ego of an engineer!
         ntfs)
